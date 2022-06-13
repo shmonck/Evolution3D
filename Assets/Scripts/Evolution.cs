@@ -61,6 +61,8 @@ public class Evolution : MonoBehaviour
 
     const float CREATURE_MUTATE_CHANCE = 0.1f;
 
+    const float CREATURE_SHOWCASE_ROTATE_SPEED = 30.0f;
+
     float foodTimer = 0.0f;
     // float poisonTimer = 0.0f;
 
@@ -126,7 +128,7 @@ public class Evolution : MonoBehaviour
     void Update()
     {
         if (creatureShowcase != null)
-            creatureShowcase.transform.Rotate(Vector3.up);
+            creatureShowcase.transform.Rotate(Vector3.up * CREATURE_SHOWCASE_ROTATE_SPEED * Time.deltaTime);
 
         foodTimer += Time.deltaTime;
         // poisonTimer += Time.deltaTime;

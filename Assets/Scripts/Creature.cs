@@ -110,7 +110,7 @@ public class Creature : MonoBehaviour
 {
 
     static float CREATURE_JUMP_FACTOR = 180.0f;
-    static float CREATURE_HEALTH_LEAK = 0.25f;
+    static float CREATURE_HEALTH_LEAK = 15.0f;
     static float CREATURE_AGE_ADULT = 10.0f;
 
     public float health = 100.0f;
@@ -196,7 +196,7 @@ public class Creature : MonoBehaviour
 
     void Update()
     {
-        health -= CREATURE_HEALTH_LEAK;
+        health -= CREATURE_HEALTH_LEAK * Time.deltaTime;
 
         if (health <= 0.0f)
         {
